@@ -1,0 +1,420 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Chemistry Lesson - Alkali Metals Group 1A">
+  <title>មេរៀនទី២ : ក្រុមលោហៈអាល់កាឡាំង (Group 1A)</title>
+
+  <!-- Google Fonts + Bootstrap Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Hanuman:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <style>
+    * {
+      font-family: 'Inter', 'Hanuman', sans-serif;
+    }
+    body {
+      background: #f8fafc;
+      scroll-behavior: smooth;
+    }
+    /* Modern Navbar same as previous redesign */
+    .navbar {
+      backdrop-filter: blur(12px);
+      background: rgba(255,255,255,0.96) !important;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+      transition: all 0.3s;
+    }
+    .logo {
+      height: 48px;
+      transition: transform 0.2s;
+    }
+    .navbar-brand span {
+      font-weight: 700;
+      background: linear-gradient(135deg, #2c3e66, #1a2a4f);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .nav-link {
+      font-weight: 500;
+      color: #2d3e6e !important;
+      transition: 0.2s;
+    }
+    .nav-link:hover {
+      color: #f97316 !important;
+    }
+    .dropdown-menu {
+      border-radius: 20px;
+      border: none;
+      box-shadow: 0 20px 35px -10px rgba(0,0,0,0.1);
+      padding: 0.75rem 0;
+    }
+    .dropdown-item {
+      font-weight: 500;
+      padding: 0.6rem 1.8rem;
+      color: #1e293b;
+    }
+    .dropdown-item:hover {
+      background: #fff4ed;
+      color: #f97316;
+    }
+    .btn-contact {
+      background: linear-gradient(105deg, #f97316, #f59e0b);
+      border: none;
+      color: white;
+      font-weight: 600;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 12px rgba(249,115,22,0.25);
+    }
+    .btn-contact:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 22px -8px rgba(249,115,22,0.4);
+      color: white;
+    }
+    /* Hero section modern */
+    .hero-lesson {
+      background: linear-gradient(120deg, #0f172a 0%, #1e293b 100%);
+      position: relative;
+      overflow: hidden;
+      padding: 4rem 0 5rem;
+    }
+    .hero-lesson::before {
+      content: "";
+      position: absolute;
+      top: -40%;
+      right: -20%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(249,115,22,0.2) 0%, rgba(249,115,22,0) 70%);
+      border-radius: 50%;
+    }
+    .hero-title {
+      font-size: 2.8rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+    .info-badge {
+      background: #f1f5f9;
+      border-radius: 40px;
+      padding: 0.25rem 1rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #f97316;
+    }
+    .feature-card {
+      background: white;
+      border-radius: 32px;
+      transition: all 0.3s;
+      border: 1px solid rgba(0,0,0,0.03);
+      box-shadow: 0 20px 35px -12px rgba(0,0,0,0.08);
+      height: 100%;
+      overflow: hidden;
+    }
+    .feature-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 30px 40px -18px rgba(0,0,0,0.15);
+    }
+    .accordion-modern {
+      background: white;
+      border-radius: 28px;
+      border: none;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.05);
+      margin-bottom: 1.8rem;
+      overflow: hidden;
+    }
+    .accordion-modern .accordion-button {
+      background: white;
+      font-weight: 700;
+      font-size: 1.3rem;
+      padding: 1.3rem 2rem;
+      color: #0f172a;
+      border: none;
+      box-shadow: none;
+    }
+    .accordion-modern .accordion-button:not(.collapsed) {
+      background: #fffaf5;
+      color: #f97316;
+    }
+    .accordion-modern .accordion-body {
+      padding: 1.5rem 2rem 2rem;
+      background: #ffffff;
+      border-top: 1px solid #f1f5f9;
+    }
+    .reaction-box {
+      background: #fefce8;
+      border-left: 5px solid #f97316;
+      border-radius: 20px;
+      padding: 1rem 1.5rem;
+    }
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+    }
+    .element-badge {
+      background: linear-gradient(135deg, #fef3c7, #ffedd5);
+      border-radius: 60px;
+      padding: 0.5rem 1.2rem;
+      display: inline-block;
+      font-weight: 700;
+      color: #f97316;
+    }
+    footer {
+      background: #0f172a;
+      color: #cbd5e1;
+    }
+    @media (max-width: 768px) {
+      .hero-title { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ***** Navbar (same design as requested) ***** -->
+<nav class="navbar navbar-expand-lg sticky-top">
+  <div class="container-fluid px-4 px-lg-5">
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <img class="logo me-2" src="assets/images/pteclogo.png" alt="PTEC logo" onerror="this.src='https://placehold.co/50?text=PTEC'">
+      <span class="fw-bold fs-6 fs-lg-5">វិទ្យាស្ថានគរុកោសល្យរាជធានីភ្នំពេញ</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav gap-2 gap-lg-3 align-items-center">
+        <li class="nav-item"><a class="nav-link" href="index.html">ទំព័រដើម</a></li>
+        <li class="nav-item"><a class="nav-link" href="periodictable.html">តារាងខួបនៃធាតុគីមី</a></li>
+        <!-- Dropdown with 5 lessons (same structure) -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            មេរៀន
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="lesson1.html">មេរៀនទី១ : លក្ខណៈរបស់តារាងខួបនៃធាតុគីមី</a></li>
+            <li><a class="dropdown-item" href="lesson2.html">មេរៀនទី២ : សិក្សាធាតុតាមក្រុម(ក្រុមទី I ឬ 1A ឬក្រុមលោហៈអាល់កាឡាំង)</a></li>
+            <li><a class="dropdown-item" href="lesson3.html">មេរៀនទី៣ : សិក្សាធាតុតាមក្រុម(ក្រុមVIIA : អាឡូសែន)</a></li>
+            <li><a class="dropdown-item" href="lesson4.html">មេរៀនទី៤ : សិក្សាធាតុតាមក្រុម(ក្រុមVIIIA : ឧស្ម័នកម្រ)</a></li>
+            <li><a class="dropdown-item" href="lesson5.html">មេរៀនទី៥ : សិក្សាធាតុតាមក្រុម(ក្រុមVIA : លោហៈ)</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="quiz.html">តេស្ត</a></li>
+        <li class="nav-item"><a class="nav-link" href="#blog">ព័ត៌មានទំនាក់ទំនង</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">អំពីយើង</a></li>
+        <li class="nav-item d-lg-block ms-2">
+          <a class="btn btn-contact rounded-pill px-4 py-2" href="#contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section Modern -->
+<section class="hero-lesson text-white">
+  <div class="container py-4">
+    <div class="row align-items-center">
+      <div class="col-lg-9 mx-auto text-center" data-aos="fade-up">
+        <span class="info-badge bg-white text-dark mb-3 d-inline-block">ជំពូកទី២ · តារាងខួបនៃធាតុគីមី</span>
+        <h1 class="hero-title fw-bold mt-2">មេរៀនទី២: ក្រុមទី I (1A) - លោហៈអាល់កាឡាំង</h1>
+        <p class="lead mt-4 opacity-90">ស្វែងយល់ពីលក្ខណៈរូបវន្ត លក្ខណៈគីមី ប្រតិកម្ម និងសារៈសំខាន់នៃធាតុលោហៈអាល់កាឡាំង</p>
+        <div class="mt-4">
+          <a href="#content-start" class="btn btn-light rounded-pill px-5 py-3 fw-semibold shadow-sm">ចាប់ផ្តើមសិក្សា <i class="bi bi-arrow-down-short"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Main content -->
+<div class="container my-5" id="content-start">
+  <!-- Two main cards: Physical & Chemical preview -->
+  <div class="row g-4 mb-5" data-aos="fade-up">
+    <div class="col-md-6">
+      <div class="feature-card p-4 text-center h-100">
+        <div class="mb-3">
+          <div class="element-badge">ក្រុម 1A</div>
+        </div>
+        <img src="images/AlkaliMetal.jfif" class="img-fluid rounded-4 mb-3" style="max-height: 180px; object-fit: cover; width: 100%;" alt="Alkali Metals" onerror="this.src='https://placehold.co/400x180?text=Alkali+Metals'">
+        <h4 class="fw-bold mt-2">លក្ខណៈរូប</h4>
+        <p class="text-muted">ទន់ ដង់ស៊ីតេទាប ចំណុចរលាយទាប និងជាចំហាយដ៏ល្អ</p>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="feature-card p-4 text-center h-100">
+        <div class="mb-3">
+          <div class="element-badge">ប្រតិកម្មគីមី</div>
+        </div>
+        <img src="images/Group1.jpg" class="img-fluid rounded-4 mb-3" style="max-height: 180px; object-fit: cover; width: 100%;" alt="Group 1 Reactions" onerror="this.src='https://placehold.co/400x180?text=Group+1+Reactions'">
+        <h4 class="fw-bold mt-2">លក្ខណៈគីមី</h4>
+        <p class="text-muted">សកម្មខ្លាំង ប្រតិកម្មជាមួយទឹក អុកស៊ីសែន និងហាឡូសែន</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Introduction + Alkali Elements list -->
+  <div class="row mb-5">
+    <div class="col-lg-12" data-aos="fade-up">
+      <div class="bg-white rounded-4 p-4 shadow-sm">
+        <h3 class="fw-bold mb-3"><i class="bi bi-star-fill text-warning me-2"></i>ធាតុនៅក្នុងក្រុមទី១ (លោហៈអាល់កាឡាំង)</h3>
+        <p class="fs-6">ធាតុនៅក្នុងក្រុមទី១ស្ថិតនៅផ្នែកខាងឆ្វេងបំផុតនៃតារាងខួបហៅថា ក្រុមលោហៈអាល់កាឡាំង។ ធាតុនៅក្នុងក្រុមទី 1 មាន៖ លីចូម (Li), សូដ្យូម (Na), ប៉ូតាស្យូម (K), រុបឌីញ៉ូម (Rb), សេស្យូម (Cs), ហ្វ្រង់ស្យូម (Fr)</p>
+        <div class="text-center mt-3">
+          <img src="images/alkaline.jpg" class="img-fluid rounded-4 shadow" alt="Alkali Metals in periodic table" style="max-height: 320px;" onerror="this.src='https://placehold.co/600x300?text=Periodic+Table+Group+1'">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Accordion sections: Physical & Chemical properties (all original content preserved) -->
+  <div class="accordion-modern accordion" id="physChemAccordion">
+    <div class="accordion-item border-0 bg-transparent">
+      <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#physicalCollapse" aria-expanded="true">
+          <i class="bi bi-gem me-3 text-warning"></i> ក. លក្ខណៈរូប (Physical Properties)
+        </button>
+      </h2>
+      <div id="physicalCollapse" class="accordion-collapse collapse show" data-bs-parent="#physChemAccordion">
+        <div class="accordion-body">
+          <ul class="list-unstyled">
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> ទន់ អាចកាត់នឹងកាំបិតបាន</li>
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> មានដង់ស៊ីតេទាប</li>
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> ចំនុចរំពុះ និងចំណុចរលាយទាប</li>
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> ជាអង្គធាតុរឹងពណ៌ប្រាក់ ហើយភ្លឺ</li>
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> ចម្លងកម្ដៅ និងចរន្តអគ្គិសនីបានល្អ</li>
+          </ul>
+          <div class="row mt-4">
+            <div class="col-md-12 text-center">
+              <img src="images/Alkali_Physic.jpg" class="img-fluid rounded-4 mb-3 shadow-sm" style="max-width: 100%;" alt="Alkali properties" onerror="this.src='https://placehold.co/700x250'">
+            </div>
+            <div class="col-md-6 mt-2 text-center">
+              <img src="images/Alkali-metal.webp" class="img-fluid rounded-4 shadow-sm" style="max-height: 180px;" alt="Alkali metal sample" onerror="this.src='https://placehold.co/400x180'">
+            </div>
+            <div class="col-md-6 mt-2 text-center">
+              <img src="images/physical.jpg" class="img-fluid rounded-4 shadow-sm" style="max-height: 180px;" alt="Physical appearance" onerror="this.src='https://placehold.co/400x180'">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-modern accordion mt-4" id="chemAccordion">
+    <div class="accordion-item border-0 bg-transparent">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#chemicalCollapse" aria-expanded="false">
+          <i class="bi bi-flask me-3 text-warning"></i> ខ. លក្ខណៈគីមី (Chemical Properties)
+        </button>
+      </h2>
+      <div id="chemicalCollapse" class="accordion-collapse collapse" data-bs-parent="#chemAccordion">
+        <div class="accordion-body">
+          <p class="fw-semibold">លោហៈអាល់កាឡាំងមានលក្ខណៈសកម្មពីលើចុះក្រោម ព្រោះទំហំអាតូមកាន់តែធំ ធ្វើឱ្យអេឡិចត្រុងស្រទាប់ក្រៅងាយផ្តាច់ចេញ។ គេរក្សាវាទុកក្នុងប្រេងកាតដើម្បីការពារប្រតិកម្មជាមួយអុកស៊ីសែន ទឹក និងសំណើម។</p>
+          
+          <div class="reaction-box mt-4">
+            <h5><i class="bi bi-droplet me-2 text-primary"></i> ក. ប្រតិកម្មជាមួយទឹក</h5>
+            <p class="mb-0 fw-bold text-dark">លោហៈអាល់កាឡាំង + ទឹក → បាសអាល់កាលី + ឧស្ម័នអ៊ីដ្រូសែន (H₂)</p>
+            <p class="mt-2"><span class="text-danger fw-bold">ឧទាហរណ៍:</span> 2Li + 2H₂O → 2LiOH + H₂</p>
+          </div>
+
+          <div class="reaction-box mt-4">
+            <h5><i class="bi bi-brightness-alt-high me-2 text-primary"></i> ខ. ប្រតិកម្មជាមួយអលោហៈ (ហាឡូសែន)</h5>
+            <p class="mb-0 fw-bold">លោហៈអាល់កាឡាំង + អាឡូសែន → អំបិលអាឡូសែន</p>
+            <p class="mt-2"><span class="text-danger fw-bold">ឧទាហរណ៍:</span> 2Na + Cl₂ → 2NaCl</p>
+          </div>
+
+          <div class="reaction-box mt-4">
+            <h5><i class="bi bi-wind me-2 text-primary"></i> គ. ប្រតិកម្មជាមួយអុកស៊ីសែន</h5>
+            <p class="mb-0 fw-bold">លោហៈអាល់កាឡាំង + អុកស៊ីសែន → អុកស៊ីត</p>
+            <p class="mt-2"><span class="text-danger fw-bold">ឧទាហរណ៍:</span> 4K + O₂ → 2K₂O</p>
+          </div>
+          
+          <div class="text-center mt-4">
+            <img src="images/Alkali-React.jpg" class="img-fluid rounded-4 shadow-sm" style="max-width: 100%;" alt="Alkali reactions" onerror="this.src='https://placehold.co/800x300'">
+          </div>
+
+          <h5 class="mt-4 fw-bold"><i class="bi bi-fire me-2 text-danger"></i> ពណ៌អណ្តាតភ្លើងនៃលោហៈអាល់កាឡាំង</h5>
+          <div class="row mt-3">
+            <div class="col-md-6 text-center mb-3">
+              <img src="images/Alkali-color.webp" class="img-fluid rounded-4 shadow-sm" style="max-height: 200px;" alt="Flame colors" onerror="this.src='https://placehold.co/400x200'">
+            </div>
+            <div class="col-md-6 text-center mb-3">
+              <img src="images/alkincolor.jpg" class="img-fluid rounded-4 shadow-sm" style="max-height: 200px;" alt="Flame test" onerror="this.src='https://placehold.co/400x200'">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Video section (all original YouTube links preserved) -->
+  <div class="mt-5" data-aos="fade-up">
+    <div class="bg-white rounded-4 p-4 shadow-sm">
+      <h3 class="fw-bold mb-4"><i class="bi bi-play-circle-fill text-danger me-2"></i> វីដេអូបង្ហាញពីប្រតិកម្មនៃក្រុមលោហៈអាល់កាឡាំង</h3>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/5mvWQdad31o" title="Alkali Metals reaction 1" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/ODf_sPexS2Q" title="Alkali Metals reaction 2" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/lAC9W78Quvc" title="Alkali Metals reaction 3" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer Section -->
+<footer class="mt-5 pt-5 pb-4">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6 text-center text-md-start">
+        <h5 class="text-white fw-semibold">វិទ្យាស្ថានគរុកោសល្យរាជធានីភ្នំពេញ</h5>
+        <p class="small opacity-75">គម្រោងតារាងខួបគីមី - ក្រុមលោហៈអាល់កាឡាំង</p>
+      </div>
+      <div class="col-md-6 text-center text-md-end">
+        <div class="social-links">
+          <a href="#" class="text-white me-3 fs-5"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="text-white me-3 fs-5"><i class="bi bi-telegram"></i></a>
+          <a href="#" class="text-white fs-5"><i class="bi bi-envelope"></i></a>
+        </div>
+        <p class="mt-3 small opacity-50">© 2025 PTEC - រក្សាសិទ្ធិគ្រប់យ៉ាង</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 800, once: true, offset: 20 });
+  // Image fallback handling
+  document.querySelectorAll('img').forEach(img => {
+    img.onerror = function() { this.style.display = 'none'; };
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Chemistry Lesson - Periodic Table">
+  <title>មេរៀនទី១ : លក្ខណៈនៃតារាងខួបគីមី</title>
+
+  <!-- Google Fonts + Bootstrap Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Hanuman:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <style>
+    * {
+      font-family: 'Inter', 'Hanuman', sans-serif;
+    }
+    body {
+      background: #f8fafc;
+      scroll-behavior: smooth;
+    }
+    /* Modern Navbar same structure but polished */
+    .navbar {
+      backdrop-filter: blur(12px);
+      background: rgba(255,255,255,0.96) !important;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+      transition: all 0.3s;
+    }
+    .logo {
+      height: 48px;
+      transition: transform 0.2s;
+    }
+    .navbar-brand span {
+      font-weight: 700;
+      background: linear-gradient(135deg, #2c3e66, #1a2a4f);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .nav-link {
+      font-weight: 500;
+      color: #2d3e6e !important;
+      transition: 0.2s;
+      position: relative;
+    }
+    .nav-link:hover {
+      color: #f97316 !important;
+    }
+    .dropdown-menu {
+      border-radius: 20px;
+      border: none;
+      box-shadow: 0 20px 35px -10px rgba(0,0,0,0.1);
+      padding: 0.75rem 0;
+      margin-top: 0.5rem;
+    }
+    .dropdown-item {
+      font-weight: 500;
+      padding: 0.6rem 1.8rem;
+      color: #1e293b;
+    }
+    .dropdown-item:hover {
+      background: #fff4ed;
+      color: #f97316;
+    }
+    .btn-contact {
+      background: linear-gradient(105deg, #f97316, #f59e0b);
+      border: none;
+      color: white;
+      font-weight: 600;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 12px rgba(249,115,22,0.25);
+    }
+    .btn-contact:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 22px -8px rgba(249,115,22,0.4);
+      color: white;
+    }
+    /* Hero section modern */
+    .hero-lesson {
+      background: linear-gradient(120deg, #0f172a 0%, #1e293b 100%);
+      position: relative;
+      overflow: hidden;
+      padding: 4rem 0 5rem;
+    }
+    .hero-lesson::before {
+      content: "";
+      position: absolute;
+      top: -40%;
+      right: -20%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(249,115,22,0.2) 0%, rgba(249,115,22,0) 70%);
+      border-radius: 50%;
+    }
+    .hero-lesson::after {
+      content: "";
+      position: absolute;
+      bottom: -30%;
+      left: -10%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(59,130,246,0.15) 0%, rgba(59,130,246,0) 70%);
+      border-radius: 50%;
+    }
+    .hero-title {
+      font-size: 3.2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+    .feature-card {
+      background: white;
+      border-radius: 32px;
+      transition: all 0.3s cubic-bezier(0.2,0.9,0.4,1.1);
+      border: 1px solid rgba(0,0,0,0.03);
+      box-shadow: 0 20px 35px -12px rgba(0,0,0,0.08);
+      height: 100%;
+    }
+    .feature-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 30px 40px -18px rgba(0,0,0,0.15);
+    }
+    .feature-number {
+      width: 44px;
+      height: 44px;
+      background: #fef3c7;
+      color: #f97316;
+      font-weight: 800;
+      font-size: 1.4rem;
+      border-radius: 24px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .accordion-modern {
+      background: white;
+      border-radius: 28px;
+      border: none;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.05);
+      margin-bottom: 2rem;
+      overflow: hidden;
+    }
+    .accordion-modern .accordion-button {
+      background: white;
+      font-weight: 700;
+      font-size: 1.3rem;
+      padding: 1.5rem 2rem;
+      color: #0f172a;
+      border: none;
+      box-shadow: none;
+    }
+    .accordion-modern .accordion-button:not(.collapsed) {
+      background: #fffaf5;
+      color: #f97316;
+    }
+    .accordion-modern .accordion-button:focus {
+      box-shadow: none;
+      border-color: transparent;
+    }
+    .accordion-modern .accordion-body {
+      padding: 1.5rem 2rem 2rem;
+      background: #ffffff;
+      border-top: 1px solid #f1f5f9;
+    }
+    .info-badge {
+      background: #f1f5f9;
+      border-radius: 40px;
+      padding: 0.25rem 1rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #f97316;
+    }
+    .comparison-table {
+      background: #fefce8;
+      border-radius: 24px;
+      padding: 1rem;
+    }
+    img.rounded-4 {
+      border-radius: 24px;
+      box-shadow: 0 12px 25px -12px rgba(0,0,0,0.2);
+    }
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      background: linear-gradient(120deg, #1e293b, #334155);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    footer {
+      background: #0f172a;
+      color: #cbd5e1;
+    }
+    @media (max-width: 768px) {
+      .hero-title { font-size: 2rem; }
+      .section-title { font-size: 1.7rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ***** Header Area with same dropdown & navbar design (improved visual) ***** -->
+<nav class="navbar navbar-expand-lg sticky-top">
+  <div class="container-fluid px-4 px-lg-5">
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <img class="logo me-2" src="assets/images/pteclogo.png" alt="PTEC logo" onerror="this.src='https://placehold.co/50?text=PTEC'">
+      <span class="fw-bold fs-6 fs-lg-5">វិទ្យាស្ថានគរុកោសល្យរាជធានីភ្នំពេញ</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav gap-2 gap-lg-3 align-items-center">
+        <li class="nav-item"><a class="nav-link" href="index.html">ទំព័រដើម</a></li>
+        <li class="nav-item"><a class="nav-link" href="periodictable.html">តារាងខួបនៃធាតុគីមី</a></li>
+        <!-- Dropdown Lessons same as requested (5 lessons) -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            មេរៀន
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="lesson1.html">មេរៀនទី១ : លក្ខណៈរបស់តារាងខួបនៃធាតុគីមី</a></li>
+            <li><a class="dropdown-item" href="lesson2.html">មេរៀនទី២ : សិក្សាធាតុតាមក្រុម(ក្រុមទី I ឬ 1A ឬក្រុមលោហៈអាល់កាឡាំង)</a></li>
+            <li><a class="dropdown-item" href="lesson3.html">មេរៀនទី៣ : សិក្សាធាតុតាមក្រុម(ក្រុមVIIA : អាឡូសែន)</a></li>
+            <li><a class="dropdown-item" href="lesson4.html">មេរៀនទី៤ : សិក្សាធាតុតាមក្រុម(ក្រុមVIIIA : ឧស្ម័នកម្រ)</a></li>
+            <li><a class="dropdown-item" href="lesson5.html">មេរៀនទី៥ : សិក្សាធាតុតាមក្រុម(ក្រុមVIA : លោហៈ)</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="quiz.html">តេស្ត</a></li>
+        <li class="nav-item"><a class="nav-link" href="#blog">ព័ត៌មានទំនាក់ទំនង</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">អំពីយើង</a></li>
+        <li class="nav-item d-lg-block ms-2">
+          <a class="btn btn-contact rounded-pill px-4 py-2" href="#contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section Modern (keeping all original meaning) -->
+<section class="hero-lesson text-white">
+  <div class="container py-4">
+    <div class="row align-items-center">
+      <div class="col-lg-8 mx-auto text-center" data-aos="fade-up">
+        <span class="info-badge bg-white text-dark mb-3 d-inline-block">ជំពូកទី២ · តារាងខួបនៃធាតុគីមី</span>
+        <h1 class="hero-title display-5 fw-bold mt-2">លក្ខណៈនៃតារាងខួប</h1>
+        <p class="lead mt-4 opacity-90">ស្វែងយល់ពីរចនាសម្ព័ន្ធ ក្រុម ខួប និងទំនាក់ទំនងរវាងធាតុគីមីតាមបែបទំនើប</p>
+        <div class="mt-4">
+          <a href="#content-start" class="btn btn-light rounded-pill px-5 py-3 fw-semibold shadow-sm">ចាប់ផ្តើមសិក្សា <i class="bi bi-arrow-down-short"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Main Content with all original images & data preserved -->
+<div class="container my-5" id="content-start">
+  <!-- Four cards representing 4 key aspects (modern layout but original content) -->
+  <div class="row g-4 mb-5" data-aos="fade-up">
+    <div class="col-md-6 col-lg-3">
+      <div class="feature-card p-4 text-center">
+        <div class="feature-number mx-auto mb-3">1</div>
+        <h5 class="fw-bold">អម្បូរនៃធាតុគីមី</h5>
+        <p class="text-muted small">ធាតុចំនួន 118 បង្កើតឡើងដោយ Mendeleev</p>
+        <img src="images/tableperiod.png" class="img-fluid rounded-3 mt-2" style="max-height: 100px; object-fit: contain;" alt="periodic table" onerror="this.src='https://placehold.co/200x100?text=Periodic'">
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-3">
+      <div class="feature-card p-4 text-center">
+        <div class="feature-number mx-auto mb-3">2</div>
+        <h5 class="fw-bold">ក្រុម និងខួប</h5>
+        <p class="text-muted small">ជួរឈរ និងជួរដេក កំណត់លក្ខណៈធាតុ</p>
+        <img src="images/periods_and_groups.jpg" class="img-fluid rounded-3 mt-2" style="max-height: 100px; object-fit: contain;" alt="groups" onerror="this.src='https://placehold.co/200x100?text=Groups'">
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-3">
+      <div class="feature-card p-4 text-center">
+        <div class="feature-number mx-auto mb-3">3</div>
+        <h5 class="fw-bold">លោហៈ និងអលោហៈ</h5>
+        <p class="text-muted small">ទីតាំងក្នុងតារាងខួប និងទំនោរបង្កើតអ៊ីយ៉ុង</p>
+        <img src="images/metalandnonmetal.png" class="img-fluid rounded-3 mt-2" style="max-height: 100px; object-fit: contain;" alt="metal nonmetal" onerror="this.src='https://placehold.co/200x100?text=Metal'">
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-3">
+      <div class="feature-card p-4 text-center">
+        <div class="feature-number mx-auto mb-3">4</div>
+        <h5 class="fw-bold">លោហៈឆ្លង និងអំផូទែ</h5>
+        <p class="text-muted small">ក្រុម B និងធាតុដែលមានលក្ខណៈពីរ</p>
+        <img src="images/metalloid.jpg" class="img-fluid rounded-3 mt-2" style="max-height: 100px; object-fit: contain;" alt="metalloid" onerror="this.src='https://placehold.co/200x100?text=Metalloids'">
+      </div>
+    </div>
+  </div>
+
+  <!-- Detailed explanation: all original text preserved -->
+  <div class="row mt-4">
+    <div class="col-lg-12">
+      <!-- 1. អម្បូរធាតុ -->
+      <div class="accordion-modern accordion" id="lessonAccordion">
+        <div class="accordion-item border-0 bg-transparent">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true">
+              <i class="bi bi-grid-3x3-gap-fill me-3 text-warning"></i> 1. អម្បូរនៃធាតុគីមី
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#lessonAccordion">
+            <div class="accordion-body">
+              <p class="fs-6">តារាងខួបនៃធាតុគីមី គឺជាតារាងចំណែកថ្នាក់នៃធាតុគីមី។ បច្ចុប្បន្ន គេស្គាល់ធាតុគីមីចំនួន 118 ធាតុហើយធាតុគីមីដែលមានក្នុងធម្មជាតិមាន ចំនួន ១០ ធាតុ។ គីមីវិទូដែលបង្កើតតារាងខួបគីមីមានឈ្មោះថា ឌីមេទ្រីមិន ដេលេយេវ (Dmitri Mendeleev) នៅឆ្នាំ1869។ គេប្រើវាដើម្បីស្វែងយល់ពី លក្ខណៈរបស់ធាតុគីមីក្នុងតារាងខួប។</p>
+              <img style="max-width: 280px; border-radius: 20px;" class="img-fluid mt-3 shadow-sm" src="images/mindayav.jpg" alt="Mendeleev" onerror="this.src='https://placehold.co/300x200?text=Mendeleev'">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. ក្រុម និងខួប with sub-accordion style -->
+      <div class="accordion-modern accordion mt-4" id="groupPeriodAccordion">
+        <div class="accordion-item border-0">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGroup" aria-expanded="false">
+              <i class="bi bi-table me-3 text-warning"></i> 2. ក្រុម និងខួប (ក្រុម A/B, ខួប 1-7)
+            </button>
+          </h2>
+          <div id="collapseGroup" class="accordion-collapse collapse" data-bs-parent="#groupPeriodAccordion">
+            <div class="accordion-body">
+              <div class="mb-4">
+                <h5 class="fw-bold text-dark">ក. ក្រុម</h5>
+                <p>ក្រុម គឺជាក្រុមនៃធាតុដែលស្ថិតនៅជួរឈរ ឬបន្ទាត់ឈរក្នុងតារាងខួបនៃធាតុគីមី។</p>
+                <p><strong>លេខក្រុម = ចំនួន (e¯) ស្រទាប់ក្រៅបង្អស់ = អេឡិចត្រុងវ៉ាឡង់</strong></p>
+                <p>ធាតុគីមីទាំងអស់ក្នុងតារាងខួបចែកជា៖ VIII ក្រុម(សម្រាប់ក្រុមA) និងក្រុមលោហៈឆ្លង(សម្រាប់ក្រុមB) ឬ 18 ក្រុម។</p>
+                <div class="alert alert-warning bg-light mt-2">
+                  <strong>ចំណាំ៖</strong> ធាតុនៅក្នុងក្រុមតែមួយមានលក្ខណៈដូចគ្នា៖ អេឡិចត្រុងស្រទាប់ក្រៅដូចគ្នា, លក្ខណៈលោហៈកើនឡើងពីលើចុះក្រោម។
+                </div>
+                <h5 class="fw-bold mt-4">ខ. ខួប</h5>
+                <p>នៅក្នុងតារាងខួបនៃធាតុគីមីគេចែកជា ៧ជួរដេក ឬ ៧ខួប។ ជួរដេក ឬបន្ទាត់ដេកក្នុងតារាងខួបហៅថា <span class="text-danger fw-bold">ខួប</span>។</p>
+                <p><strong>លេខខួប = ចំនួនស្រទាប់អេឡិចត្រុងរបស់ធាតុ</strong></p>
+                <div class="bg-light p-3 rounded-4 mt-3">
+                  <p class="mb-0"><span class="fw-bold">ការកំណត់ក្រុម/ខួបតាមរបាយអេឡិចត្រុង៖</span><br>
+                  - ឧទាហរណ៍៖ K² L⁸ M¹ → ស្រទាប់ក្រៅ M=1 ⇒ ក្រុមទី1, ស្រទាប់ចុងក្រោយ M ជាស្រទាប់ទី៣ ⇒ ខួបទី៣។</p>
+                </div>
+                <img src="images/Kl.jpg" class="img-fluid rounded-4 mt-3 me-2" style="max-width: 260px;" alt="electron configuration" onerror="this.src='https://placehold.co/260x180'">
+                <img src="images/sp.jpg" class="img-fluid rounded-4 mt-3" style="max-width: 260px;" alt="orbitals" onerror="this.src='https://placehold.co/260x180'">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. ទីតាំងលោហៈ និងអលោហៈ និងឧទាហរណ៍ -->
+      <div class="accordion-modern accordion mt-4" id="metalAccordion">
+        <div class="accordion-item border-0">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMetal" aria-expanded="false">
+              <i class="bi bi-cpu me-3 text-warning"></i> 3. ទីតាំងលោហៈ អលោហៈ និងធាតុអំផូទែ
+            </button>
+          </h2>
+          <div id="collapseMetal" class="accordion-collapse collapse" data-bs-parent="#metalAccordion">
+            <div class="accordion-body">
+              <h5 class="fw-bold">ក. លោហៈ</h5>
+              <p>លោហៈនៅផ្នែកខាងឆ្វេង និងផ្នែកកណ្តាលនៃតារាងខួប។ លក្ខណៈគីមីនៃលោហៈកើនឡើងពីស្តាំទៅឆ្វេង និងកើនឡើងពីលើចុះក្រោម។ លោហៈមានទំនោរបោះបង់អេឡិចត្រុង → កាចុង (cation)។</p>
+              <div class="bg-light p-3 rounded-4 my-3">
+                <strong>ឧទាហរណ៍:</strong> Na → Na⁺ + e⁻ &nbsp;&nbsp; Zn → Zn²⁺ + 2e⁻ &nbsp;&nbsp; Al → Al³⁺ + 3e⁻
+              </div>
+              <h5 class="fw-bold mt-4">ខ. អលោហៈ</h5>
+              <p>អលោហៈនៅខាងស្តាំនៃតារាងខួបជិតឧស្ម័នកម្រ។ មានទំនោរចាប់យកអេឡិចត្រុង → អាញ៉ុង (anion)។</p>
+              <div class="bg-light p-3 rounded-4 my-3">
+                <strong>ឧទាហរណ៍:</strong> Cl₂ + 2e⁻ → 2Cl⁻  ,  O₂ + 4e⁻ → 2O²⁻
+              </div>
+              <h5 class="fw-bold">គ. ប្រៀបធៀបលោហៈ និងអលោហៈ</h5>
+              <img src="images/metal.jpg" class="img-fluid rounded-4 my-3 w-100" style="max-width: 650px;" alt="comparison" onerror="this.src='https://placehold.co/600x400?text=Metal+vs+Nonmetal'">
+              
+              <h5 class="fw-bold mt-4">IV. លោហៈឆ្លង និងធាតុអំផូទែ</h5>
+              <p>លោហៈធាតុឆ្លងស្ថិតនៅចន្លោះក្រុម IIA និង IIIA មាន 30 ធាតុ មានពណ៌ជាសំគាល់ (MnO₄⁻ ពណ៌ស្វាយ, CuSO₄ ពណ៌ខៀវ)។</p>
+              <img src="images/color.jpg" class="img-fluid rounded-4 my-2" style="max-width: 260px;" alt="colored ions" onerror="this.src='https://placehold.co/260x180'">
+              <p class="mt-2"><strong>ធាតុអំផូទែ៖</strong> B, Si, Ge, As, Sb, Te, Po (មានលក្ខណៈលោហៈនិងអលោហៈ)</p>
+              <img src="images/Ompotea.jpg" class="img-fluid rounded-4 mt-2" style="max-width: 500px;" alt="metalloids" onerror="this.src='https://placehold.co/500x250'">
+              <div class="mt-3 p-3 border-start border-4 border-warning bg-light">
+                <strong>កាតាលីករ</strong>៖ ឧ. Fe ប្រើក្នុងផលិតកម្មអាម៉ូញាក់ (ពន្លឿនប្រតិកម្ម)
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Additional electron configuration details (s,p,d,f) with modern card -->
+      <div class="accordion-modern accordion mt-4" id="electronConf">
+        <div class="accordion-item border-0">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseElectron" aria-expanded="false">
+              <i class="bi bi-diagram-3 me-3 text-warning"></i> របាយអេឡិចត្រុងតាមស្រទាប់រង (s, p, d, f) & ឧទាហរណ៍
+            </button>
+          </h2>
+          <div id="collapseElectron" class="accordion-collapse collapse" data-bs-parent="#electronConf">
+            <div class="accordion-body">
+              <p>វិធានក្នុងការសរសេររបាយអេឡិចត្រុងតាមស្រទាប់រង (s,p,d,f)។ ការបំពេញផ្តើមពី 1s → 2s → 2p → 3s → 3p → 4s → 3d ...</p>
+              <img src="images/Obital.jpg" class="img-fluid rounded-4 my-2" style="max-width: 400px;" alt="orbital diagram" onerror="this.src='https://placehold.co/400x200'">
+              <div class="row mt-3">
+                <div class="col-md-6">
+                  <div class="bg-white border rounded-4 p-3 shadow-sm">
+                    <p><strong>សមត្ថភាពផ្ទុក៖</strong><br>
+                    s → max 2e⁻<br>p → max 6e⁻<br>d → max 10e⁻<br>f → max 14e⁻</p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="bg-white border rounded-4 p-3 shadow-sm">
+                    <p><strong>កំណត់ក្រុម/ខួបតាមរបាយរង៖</strong><br>
+                    - ប្លុក s : ក្រុម = e⁻ ក្រៅ<br>
+                    - ប្លុក p : ក្រុម = e⁻ក្រៅ + 12<br>
+                    - ប្លុក d : ក្រុម = e⁻ក្រៅ + 2<br>
+                    ខួប = លេខធំបំផុតខាងមុខស្រទាប់រង
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="alert alert-secondary mt-3">
+                <strong>ឧទាហរណ៍ (កាបូន Z=6):</strong> របាយ 1s²2s²2p² ⇒ ក្រុមទី4A, ខួបទី2 (ព្រោះស្រទាប់ធំបំផុត n=2)
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- extra section "សរុប" clean footer -->
+<footer class="mt-5 pt-5 pb-4">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6 text-center text-md-start">
+        <h5 class="text-white fw-semibold">វិទ្យាស្ថានគរុកោសល្យរាជធានីភ្នំពេញ</h5>
+        <p class="small opacity-75">គម្រោងតារាងខួបគីមី ជំនាន់ទី៤</p>
+      </div>
+      <div class="col-md-6 text-center text-md-end">
+        <div class="social-links">
+          <a href="#" class="text-white me-3 fs-5"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="text-white me-3 fs-5"><i class="bi bi-telegram"></i></a>
+          <a href="#" class="text-white fs-5"><i class="bi bi-envelope"></i></a>
+        </div>
+        <p class="mt-3 small opacity-50">© 2025 PTEC - រក្សាសិទ្ធិគ្រប់យ៉ាង</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 800, once: true, offset: 20 });
+  // fix for any broken images fallback (optional)
+  document.querySelectorAll('img').forEach(img => {
+    img.onerror = function() { this.style.display = 'none'; };
+  });
+</script>
+</body>
+</html>

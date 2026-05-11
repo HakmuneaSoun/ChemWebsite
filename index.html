@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chemistry Website - វិទ្យាស្ថានគរុកោសល្យរាជធានីភ្នំពេញ</title>
+
+    <!-- bootstrap css cdn link  -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+
+    <!-- custom css file -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
+
+    <!-- google font link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Hanuman:wght@100..900&display=swap" rel="stylesheet" />
+
+    <!-- bootstrap icon cdn link  -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css"
+    />
+
+    <!-- for adding animation to website we have use AOS library 
+    AOS Library css file cdn link -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- jquery cdn link  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  </head>
+  <body>
+    <!-- navbar starts with DROPDOWN for lessons (5 lessons) as requested -->
+    <nav
+      id="navbar-top"
+      class="navbar navbar-expand-lg navbar-light bg-white "
+    >
+      <div class="container-fluid px-5">
+        <img class="logo me-2" src="assets/images/pteclogo.png" alt="PTEC Logo" onerror="this.src='https://via.placeholder.com/50?text=PTEC'"/>
+        <a class="navbar-brand fw-bold fs-5 fs-md-4" href="#" style="color: #3f396d; line-height: 1.3;">
+          វិទ្យាស្ថានគរុកោសល្យរាជធានីភ្នំពេញ
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="bi bi-menu-button-fill fs-2"></i>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-center"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav gap-lg-3 gap-md-2" style="font-size: 1rem">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#">ទំព័រដើម</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="periodictable.html">តារាងខួបនៃធាតុគីមី</a>
+            </li>
+            
+            <!-- DROPDOWN for 5 LESSONS as required (Bootstrap) -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                មេរៀន
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item" href="lesson1.html">មេរៀនទី១ : លក្ខណៈរបស់តារាងខួបនៃធាតុគីមី</a></li>
+                <li><a class="dropdown-item" href="lesson2.html">មេរៀនទី២ : សិក្សាធាតុតាមក្រុម(ក្រុមទី I ឬ 1A ឬក្រុមលោហៈអាល់កាឡាំង)</a></li>
+                <li><a class="dropdown-item" href="lesson3.html">មេរៀនទី៣ : សិក្សាធាតុតាមក្រុម(ក្រុមVIIA : អាឡូសែន)</a></li>
+                <li><a class="dropdown-item" href="lesson4.html">មេរៀនទី៤ : សិក្សាធាតុតាមក្រុម(ក្រុមVIIIA : ឧស្ម័នកម្រ)</a></li>
+                <li><a class="dropdown-item" href="lesson5.html">មេរៀនទី៥ : សិក្សាធាតុតាមក្រុម(ក្រុមVIA : លោហៈ)</a></li>
+              </ul>
+            </li>
+            <!-- End of Lessons Dropdown -->
+            
+            <li class="nav-item">
+              <a class="nav-link" href="quiz.html">តេស្ត</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#blog">ព័ត៌មានទំនាក់ទំនង</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">អំពីយើង</a>
+            </li>
+          </ul>
+        </div>
+        <button class="c-btn ms-4 py-2 px-4 rounded-pill d-none d-md-block text-white border-0">ទំនាក់ទំនង</button>
+      </div>
+    </nav>
+    <!-- navbar ends here -->
+
+    <!-- home section starts  -->
+    <section class="home pt-5 pb-5" id="home">
+      <div class="row justify-content-evenly align-middle">
+        <div class="col-10 col-md-6 text-center text-md-start" data-aos="slide-right">
+          <h2 style="color: #3f396d">
+            ស្វាគមន៍មកកាន់  <br /><span class="c-orange" style="color:#f34c1e;">វិទ្យាស្ថានគរុកោសល្យរាជធានីភ្នំពេញ</span>
+          </h2>
+          <p class="text-muted">
+            ភ្នំពេញ TEC (PTEC) ត្រូវបានបង្កើតឡើងតាមរយៈការរួមបញ្ចូលគ្នានៃសាខាទាំងពីរ គឺមជ្ឈមណ្ឌលគរុកោសល្យភូមិភាគភ្នំពេញ និងមជ្ឈមណ្ឌលគរុកោសល្យរាជធានីភ្នំពេញ តាមអនុក្រឹត្យលេខ ៧៣ ចុះថ្ងៃទី២២ ខែឧសភា ឆ្នាំ២០១៧។
+          </p>
+          <button class="c-btn h-btn mt-3 py-3 px-5 rounded-pill text-white border-0">
+            មើលព័ត៌មានបន្ថែម
+          </button>
+        </div>
+        <div class="col-10 col-md-4 d-none d-md-block">
+          <img src="https://construction-property.com/wp-content/uploads/2019/07/construction-of-japan-funded-teacher-education-college-tec-begins.jpg" class="img-fluid rounded-4 shadow" alt="Campus" />
+        </div>
+      </div>
+    </section>
+    <!-- home section ends here -->
+
+    <!--Group section starts -->
+    <section class="expertise mt-5" id="service">
+      <div class="heading text-center">
+        <h3>
+          រចនាសម្ពន្ធ័ <br />
+          <span class="d-inline-block mt-2">គ្រូដឹកនាំ​ និង​ សមាជិកក្រុម</span>
+        </h3>
+      </div>
+      <div class="container mt-5">
+      <!-- Top single card -->
+      <div class="row justify-content-center mb-5">
+        <div class="col-10 col-md-6" data-aos="fade-up">
+          <div class="service-card text-center">
+            <div class="img">
+              <img
+                src="images/Teacher.jpg"
+                class="w-25 img-fluid rounded-circle"
+                alt="Teacher Icon"
+                onerror="this.src='https://randomuser.me/api/portraits/women/68.jpg'"
+              />
+            </div>
+            <div class="content mt-3">
+              <h4>អ្នកគ្រូ​ តាន់ សុម៉ាលីដា</h4>
+              <p class="text-muted">
+                គ្រូឧទ្ទេសបង្រៀននៅវិទ្យាស្ថានគរុកោសល្យរាជធានីភ្នំពេញ
+              </p>
+              <a href="#" class="link text-decoration-none" style="color:#f34c1e;">Read More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom five cards -->
+      <div class="row justify-content-center g-4">
+        <div class="col-10 col-sm-6 col-lg-4" data-aos="fade-up">
+          <div class="service-card text-center">
+            <div class="img">
+              <img src="images/image1.png" class="w-25 img-fluid rounded-circle" alt="Student Icon" onerror="this.src='https://randomuser.me/api/portraits/men/32.jpg'"/>
+            </div>
+            <div class="content mt-3">
+              <h4>គរុនិស្សិត សួន ហមុនៀ</h4>
+              <p class="text-muted">គរុនិស្សិតឆ្នាំទី២ ឯកទេសគីមីវិទ្យា ជំនាន់ទី៤</p>
+              <a href="#" class="link text-decoration-none">Read More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-10 col-sm-6 col-lg-4" data-aos="fade-up">
+          <div class="service-card text-center">
+            <div class="img"><img src="images/image3.png" class="w-25 img-fluid rounded-circle" alt="Student" onerror="this.src='https://randomuser.me/api/portraits/men/45.jpg'"/></div>
+            <div class="content mt-3"><h4>គរុនិស្សិត ស៊ សុខលីន</h4><p class="text-muted">គរុនិស្សិតឆ្នាំទី២ ឯកទេសគីមីវិទ្យា</p><a href="#" class="link text-decoration-none">Read More</a></div>
+          </div>
+        </div>
+        <div class="col-10 col-sm-6 col-lg-4" data-aos="fade-up">
+          <div class="service-card text-center">
+            <div class="img"><img src="images/image2.png" class="w-25 img-fluid rounded-circle" alt="Student" onerror="this.src='https://randomuser.me/api/portraits/women/23.jpg'"/></div>
+            <div class="content mt-3"><h4>គរុនិស្សិត ម៉ន សុជា</h4><p class="text-muted">គរុនិស្សិតឆ្នាំទី២ ឯកទេសគីមីវិទ្យា</p><a href="#" class="link text-decoration-none">Read More</a></div>
+          </div>
+        </div>
+        <div class="col-10 col-sm-6 col-lg-4" data-aos="fade-up">
+          <div class="service-card text-center">
+            <div class="img"><img src="images/image4.png" class="w-25 img-fluid rounded-circle" alt="Student" onerror="this.src='https://randomuser.me/api/portraits/men/12.jpg'"/></div>
+            <div class="content mt-3"><h4>គរុនិស្សិត រ៉ន វត្តី</h4><p class="text-muted">គរុនិស្សិតឆ្នាំទី២ ឯកទេសគីមីវិទ្យា</p><a href="#" class="link text-decoration-none">Read More</a></div>
+          </div>
+        </div>
+        <div class="col-10 col-sm-6 col-lg-4" data-aos="fade-up">
+          <div class="service-card text-center">
+            <div class="img"><img src="images/image6.jpg" class="w-25 img-fluid rounded-circle" alt="Student" onerror="this.src='https://randomuser.me/api/portraits/women/55.jpg'"/></div>
+            <div class="content mt-3"><h4>គរុនិស្សិត លីម សុលក្ខណា</h4><p class="text-muted">គរុនិស្សិតឆ្នាំទី២ ឯកទេសគីមីវិទ្យា</p><a href="#" class="link text-decoration-none">Read More</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </section>
+    <!-- expertise section ends here -->
+
+    <!-- skill section starts -->
+    <section class="skill mt-5 py-5" id="about">
+      <div class="row align-items-center justify-content-between mt-5">
+  <div class="col-12 col-md-5 left-margin" data-aos="slide-right">
+    <div class="d-flex flex-column gap-4">      
+      <div class="d-flex align-items-start gap-3">
+        <div class="feature-icon rounded-circle d-flex justify-content-center align-items-center" style="width:50px; height:50px; background:#f34c1e20; color:#f34c1e; font-weight:bold;">1</div>
+        <div><h5 class="mb-1">ងាយស្រួលក្នុងការសិក្សា និងស្វែងរកព័ត៌មាន</h5><p class="text-muted mb-0">អាចស្វែងរកព័ត៌មានអំពីធាតុគីមីបានយ៉ាងងាយ និងទាន់សម័យ។</p></div>
+      </div>
+      <div class="d-flex align-items-start gap-3">
+        <div class="feature-icon rounded-circle d-flex justify-content-center align-items-center" style="width:50px; height:50px; background:#f34c1e20; color:#f34c1e;">2</div>
+        <div><h5 class="mb-1">មានការត្រួតពិនិត្យ និងធ្វើបច្ចុប្បន្នភាព</h5><p class="text-muted mb-0">មេរៀន និងព័ត៌មានអាចបន្ថែមឬកែប្រែបានងាយស្រួល។</p></div>
+      </div>
+      <div class="d-flex align-items-start gap-3">
+        <div class="feature-icon rounded-circle d-flex justify-content-center align-items-center" style="width:50px; height:50px; background:#f34c1e20;">3</div>
+        <div><h5 class="mb-1">ជួយគ្រូបង្រៀនក្នុងការបង្ហាញមេរៀន</h5><p class="text-muted mb-0">គ្រូអាចប្រើវេបសាយក្នុងម៉ោងបង្រៀនបានងាយដើម្បីបង្រៀន។</p></div>
+      </div>
+      <div class="d-flex align-items-start gap-3">
+        <div class="feature-icon rounded-circle d-flex justify-content-center align-items-center" style="width:50px; height:50px; background:#f34c1e20;">4</div>
+        <div><h5 class="mb-1">អាចប្រើបានគ្រប់ទីកន្លែង</h5><p class="text-muted mb-0">វេបសាយអាចប្រើបានទូរស័ព្ទ និងកុំព្យូទ័រ។</p></div>
+      </div>
+      <div class="d-flex align-items-start gap-3">
+        <div class="feature-icon rounded-circle d-flex justify-content-center align-items-center" style="width:50px; height:50px; background:#f34c1e20;">5</div>
+        <div><h5 class="mb-1">បង្កើតការសហការរៀន (Collaborative Learning)</h5><p class="text-muted mb-0">អ្នករៀនអាចចែករំលែក និងសហការក្នុងការសិក្សាបាន។</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-md-6" data-aos="slide-left">
+    <div class="heading mt-5 mt-md-0">
+      <small class="text-uppercase" style="color:#f34c1e;">ហេតុអ្វី</small>
+      <h3>បានជាយើងបង្កើតវេបសាយនេះឡើង?</h3>
+      <p class="text-muted">វេបសាយតារាងខួបគីមីគឺជាឧបករណ៍បច្ចេកវិទ្យាដែលជួយឲ្យការបង្រៀន និងសិក្សាមេរៀនគីមីវិទ្យាមានភាពងាយស្រួល ច្បាស់លាស់ និងទាន់សម័យ។</p>
+      <p class="text-muted">ការបង្កើតវេបសាយតារាងខួបធាតុគីមី (Periodic Table Website) ក្នុងការបង្រៀន គឺដើម្បីជួយឲ្យការបង្រៀនគីមីវិទ្យាកាន់តែមានប្រសិទ្ធភាព និងទាក់ទាញ។</p>
+      <button class="c-btn h-btn mt-3 py-3 px-5 rounded-pill text-white border-0">មើលព័ត៌មានបន្ថែម</button>
+    </div>
+  </div>
+</div>
+    </section>
+    <!-- skill section end here -->
+   
+    <!-- blog section starts -->
+    <section class="blog mt-5 pb-5" id="blog">
+      <div class="heading text-center pt-5">
+        <h3>សកម្មភាពក្នុងការបង្កើតគម្រោង</h3>
+      </div>
+      <div class="row justify-content-evenly px-4 mt-4" data-aos="fade-up">
+        <div class="blogpost col-md-4 col-10 mt-5 mt-md-0 website all">
+          <div class="card shadow-sm border-0 rounded-4 overflow-hidden">
+            <img src="images/Discuss.jpg" class="card-img-top" alt="Discussion" onerror="this.src='https://picsum.photos/id/20/400/250'"/>
+            <div class="card-body px-4">
+              <small>សកម្មភាពពិភាក្សាគម្រោង</small><span class="ms-3 text-muted">ថ្ងៃទី ១៩ ខែ តុលា ឆ្នាំ ២០២៥</span>
+              <p class="text-muted mt-2">ការពិភាក្សាពីគម្រោងនៃការបង្កើតតារាងខួបនៃធាតុគីមី</p>
+              <a href="#" class="read-more-btn link text-decoration-none" data-bs-toggle="modal" data-bs-target="#exampleModal2">Read More</a>
+            </div>
+          </div>
+        </div>
+        <div class="blogpost col-md-4 col-10 mt-5 mt-md-0 webapp all">
+          <div class="card shadow-sm border-0 rounded-4 overflow-hidden">
+            <img src="images/work.jpg" class="card-img-top" alt="Coding" onerror="this.src='https://picsum.photos/id/26/400/250'"/>
+            <div class="card-body px-4">
+              <small>សកម្មភាពបង្កើតគម្រោង</small><span class="ms-3 text-muted">ថ្ងៃទី ១៩ ខែ វិច្ឆិកា ឆ្នាំ ២០២៥</span>
+              <p class="text-muted mt-2">ដំណើរការសរសេរកូដគម្រោងដើម្បីបង្កើតតារាងខួបនៃធាតុគីមី</p>
+              <a href="#" class="read-more-btn link text-decoration-none" data-bs-toggle="modal" data-bs-target="#exampleModal3">Read More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- contact section starts -->
+    <section class="contact py-5" id="contact">
+      <div class="heading text-center">
+        <small style="color:#f34c1e;">ព័ត៌មានទំនាក់ទំនង</small>
+        <h3>យើងខ្ញុំរីករាយក្នុងការឆ្លើយតបគ្រប់ពេលវេលា</h3>
+      </div>
+      <div class="row justify-content-evenly mt-5">
+        <div class="col-md-5 col-10 contact-details" data-aos="slide-right">
+          <div class="row justify-content-evenly mb-3"><div class="col-1"><i class="bi bi-geo-alt-fill text-danger"></i></div><div class="col-11"><p>ផ្លូវ២៧១ ក្រុម១៩ ភូមិ១១ សង្កាត់ទឹកល្អក់៣ ខណ្ឌទួលគោក រាជធានីភ្នំពេញ</p></div></div>
+          <div class="row justify-content-evenly mb-3"><div class="col-1"><i class="bi bi-telephone-fill text-danger"></i></div><div class="col-11"><p>០៧០២៣៤៥៦៧</p></div></div>
+          <div class="row justify-content-evenly mb-3"><div class="col-1"><i class="bi bi-send-fill text-danger"></i></div><div class="col-11"><p>hakmunea@gmail.com</p></div></div>
+          <div class="row justify-content-evenly"><div class="col-1"><i class="bi bi-globe-americas text-danger"></i></div><div class="col-11"><p>chemistry.ptec.edu</p></div></div>
+        </div>
+        <div class="col-md-5 col-10 mt-3 mt-md-0" data-aos="slide-left">
+          <div class="contact-form">
+            <div class="mb-3"><input type="text" class="form-control rounded-pill" placeholder="Name" /></div>
+            <div class="mb-3"><input type="email" class="form-control rounded-pill" placeholder="E-mail" /></div>
+            <div class="mb-3"><input type="text" class="form-control rounded-pill" placeholder="Mobile No." /></div>
+            <div class="mb-3"><textarea class="form-control rounded-4" placeholder="Message" rows="5"></textarea></div>
+            <button class="c-btn h-btn mt-3 py-3 px-5 rounded-pill text-white border-0">Submit</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- contact section ends here -->
+
+    <!--ChatBot AI-->
+    <button id="chatbot-toggler">
+      <span class="material-symbols-outlined">mode_comment</span>
+      <span class="material-symbols-rounded">close</span>
+    </button>
+
+    <div class="chatbot-popup">
+      <!-- Chatbot Header -->
+      <div class="chat-header">
+        <div class="header-info">
+          <svg 
+            class="chatbot-logo"
+            xmlns="http://www.w3.org/2000/svg"
+            width="50"
+            height="50"
+            viewBox="0 0 1024 1024"
+          >
+            <path
+              d="M738.3 287.6H285.7c-59 0-106.8 47.8-106.8 106.8v303.1c0 59 47.8 106.8 106.8 106.8h81.5v111.1c0 .7.8 1.1 1.4.7l166.9-110.6 41.8-.8h117.4l43.6-.4c59 0 106.8-47.8 106.8-106.8V394.5c0-59-47.8-106.9-106.8-106.9zM351.7 448.2c0-29.5 23.9-53.5 53.5-53.5s53.5 23.9 53.5 53.5-23.9 53.5-53.5 53.5-53.5-23.9-53.5-53.5zm157.9 267.1c-67.8 0-123.8-47.5-132.3-109h264.6c-8.6 61.5-64.5 109-132.3 109zm110-213.7c-29.5 0-53.5-23.9-53.5-53.5s23.9-53.5 53.5-53.5 53.5 23.9 53.5 53.5-23.9 53.5-53.5 53.5zM867.2 644.5V453.1h26.5c19.4 0 35.1 15.7 35.1 35.1v121.1c0 19.4-15.7 35.1-35.1 35.1h-26.5zM95.2 609.4V488.2c0-19.4 15.7-35.1 35.1-35.1h26.5v191.3h-26.5c-19.4 0-35.1-15.7-35.1-35.1zM561.5 149.6c0 23.4-15.6 43.3-36.9 49.7v44.9h-30v-44.9c-21.4-6.5-36.9-26.3-36.9-49.7 0-28.6 23.3-51.9 51.9-51.9s51.9 23.3 51.9 51.9z"
+            ></path>
+          </svg>
+
+          <h2 class="logo-text">Chatbot</h2>
+        </div>
+        <button id="close-chatbot"
+        class="material-symbols-rounded">keyboard_arrow_down</button>
+      </div>
+
+      <!-- Chatbot Body -->
+      <div class="chat-body">
+        <div class="message bot-message">
+          <svg 
+            class="bot-avatar"
+            xmlns="http://www.w3.org/2000/svg"
+            width="50"
+            height="50"
+            viewBox="0 0 1024 1024"
+          >
+          <path
+              d="M738.3 287.6H285.7c-59 0-106.8 47.8-106.8 106.8v303.1c0 59 47.8 106.8 106.8 106.8h81.5v111.1c0 .7.8 1.1 1.4.7l166.9-110.6 41.8-.8h117.4l43.6-.4c59 0 106.8-47.8 106.8-106.8V394.5c0-59-47.8-106.9-106.8-106.9zM351.7 448.2c0-29.5 23.9-53.5 53.5-53.5s53.5 23.9 53.5 53.5-23.9 53.5-53.5 53.5-53.5-23.9-53.5-53.5zm157.9 267.1c-67.8 0-123.8-47.5-132.3-109h264.6c-8.6 61.5-64.5 109-132.3 109zm110-213.7c-29.5 0-53.5-23.9-53.5-53.5s23.9-53.5 53.5-53.5 53.5 23.9 53.5 53.5-23.9 53.5-53.5 53.5zM867.2 644.5V453.1h26.5c19.4 0 35.1 15.7 35.1 35.1v121.1c0 19.4-15.7 35.1-35.1 35.1h-26.5zM95.2 609.4V488.2c0-19.4 15.7-35.1 35.1-35.1h26.5v191.3h-26.5c-19.4 0-35.1-15.7-35.1-35.1zM561.5 149.6c0 23.4-15.6 43.3-36.9 49.7v44.9h-30v-44.9c-21.4-6.5-36.9-26.3-36.9-49.7 0-28.6 23.3-51.9 51.9-51.9s51.9 23.3 51.9 51.9z"
+            ></path>
+          </svg>
+          <div class="message-text">
+            Hey there 👋 <br />
+            How can i help you today?
+          </div>
+        </div>
+      </div>
+      
+
+      <!-- Chatbot Footer -->
+      <div class="chat-footer">
+        <form action="#" class="chat-form">
+          <textarea placeholder="Message..." class="message-input" required></textarea>
+          <div class="chat-controls">
+            <button type="button" id="emoji-picker" class="material-symbols-rounded">sentiment_satisfied</button>
+            <div class="file-upload-wrapper">
+              <input type="file" accept="images/*" id="file-input" hidden>
+              <button type="button" id="file-upload" class="material-symbols-rounded">attach_file</button>
+            </div>
+            <button type="submit" id="send-message" class="material-symbols-rounded">arrow_upward</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- footer section starts  -->
+    <footer class="text-center text-muted py-4" style="background:#1e1c34;">
+      <h3 class="text-white pt-4" data-aos="fade-up">គម្រោងស្រាវជាវ</h3>
+      <div class="link-group mt-5" data-aos="fade-up">
+        <a href="#home" class="text-white text-decoration-none mx-2">ទំព័រដើម</a>
+        <div class="vr d-inline-block bg-white"></div>
+        <a href="#about" class="text-white text-decoration-none mx-2">អំពីពួកយើង</a>
+        <div class="vr d-inline-block bg-white"></div>
+        <a href="#blog" class="text-white text-decoration-none mx-2">ព័ត៌មានទំនាក់ទំនង</a>
+      </div>
+      <div class="social-links mt-5" data-aos="fade-up">
+        <button class="rounded-pill dribble btn btn-outline-light mx-1"><i class="bi bi-dribbble"></i></button>
+        <button class="rounded-pill whatsapp btn btn-outline-light mx-1"><i class="bi bi-whatsapp"></i></button>
+        <button class="rounded-pill behance btn btn-outline-light mx-1"><i class="bi bi-behance"></i></button>
+      </div>
+      <hr class="text-white-50 my-4" />
+      <p class="text-white-50">Copyright 2025 | All Rights Reserved.</p>
+    </footer>
+    <!-- footer section ends here -->
+
+    <!-- bootstrap javascript cdn link  -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- AOS library javascript link  -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 1000, offset: 50, });
+      // Back to top button logic
+      const backBtn = document.getElementById("btn-back-to-top");
+      if(backBtn){
+        window.addEventListener("scroll", () => {
+          if(window.scrollY > 300) backBtn.style.display = "flex";
+          else backBtn.style.display = "none";
+        });
+        backBtn.addEventListener("click", () => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+        backBtn.style.display = "none";
+      }
+    </script>
+     <script src="https://cdn.jsdelivr.net/npm/emoji-mart@latest/dist/browser.js"></script>
+     <script src="scriptbot.js"></script>
+  </body>
+</html>

@@ -1,0 +1,454 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Chemistry Lesson - Halogens Group VIIA">
+  <title>មេរៀនទី៣ : ក្រុម VIIA - អាឡូសែន (Halogens)</title>
+
+   <!-- Google Fonts + Bootstrap Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Hanuman:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <style>
+    * {
+      font-family: 'Inter', 'Hanuman', sans-serif;
+    }
+    body {
+      background: #f8fafc;
+      scroll-behavior: smooth;
+    }
+    /* Modern Navbar */
+    .navbar {
+      backdrop-filter: blur(12px);
+      background: rgba(255,255,255,0.96) !important;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+      transition: all 0.3s;
+    }
+    .logo {
+      height: 48px;
+      transition: transform 0.2s;
+    }
+    .navbar-brand span {
+      font-weight: 700;
+      background: linear-gradient(135deg, #2c3e66, #1a2a4f);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .nav-link {
+      font-weight: 500;
+      color: #2d3e6e !important;
+      transition: 0.2s;
+    }
+    .nav-link:hover {
+      color: #f97316 !important;
+    }
+    .dropdown-menu {
+      border-radius: 20px;
+      border: none;
+      box-shadow: 0 20px 35px -10px rgba(0,0,0,0.1);
+      padding: 0.75rem 0;
+    }
+    .dropdown-item {
+      font-weight: 500;
+      padding: 0.6rem 1.8rem;
+      color: #1e293b;
+    }
+    .dropdown-item:hover {
+      background: #fff4ed;
+      color: #f97316;
+    }
+    .btn-contact {
+      background: linear-gradient(105deg, #f97316, #f59e0b);
+      border: none;
+      color: white;
+      font-weight: 600;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 12px rgba(249,115,22,0.25);
+    }
+    .btn-contact:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 22px -8px rgba(249,115,22,0.4);
+      color: white;
+    }
+    /* Hero Section */
+    .hero-lesson {
+      background: linear-gradient(120deg, #0f172a 0%, #1e293b 100%);
+      position: relative;
+      overflow: hidden;
+      padding: 4rem 0 5rem;
+    }
+    .hero-lesson::before {
+      content: "";
+      position: absolute;
+      top: -40%;
+      right: -20%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(249,115,22,0.2) 0%, rgba(249,115,22,0) 70%);
+      border-radius: 50%;
+    }
+    .hero-lesson::after {
+      content: "";
+      position: absolute;
+      bottom: -30%;
+      left: -10%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(59,130,246,0.15) 0%, rgba(59,130,246,0) 70%);
+      border-radius: 50%;
+    }
+    .hero-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+    .info-badge {
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(4px);
+      border-radius: 40px;
+      padding: 0.35rem 1.2rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #fcd34d;
+    }
+    .feature-card {
+      background: white;
+      border-radius: 32px;
+      transition: all 0.3s cubic-bezier(0.2,0.9,0.4,1.1);
+      border: 1px solid rgba(0,0,0,0.03);
+      box-shadow: 0 20px 35px -12px rgba(0,0,0,0.08);
+      height: 100%;
+      overflow: hidden;
+    }
+    .feature-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 30px 40px -18px rgba(0,0,0,0.15);
+    }
+    .element-badge {
+      background: linear-gradient(135deg, #fef3c7, #ffedd5);
+      border-radius: 60px;
+      padding: 0.5rem 1.2rem;
+      display: inline-block;
+      font-weight: 700;
+      color: #f97316;
+    }
+    .accordion-modern {
+      background: white;
+      border-radius: 28px;
+      border: none;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.05);
+      margin-bottom: 1.8rem;
+      overflow: hidden;
+    }
+    .accordion-modern .accordion-button {
+      background: white;
+      font-weight: 700;
+      font-size: 1.3rem;
+      padding: 1.3rem 2rem;
+      color: #0f172a;
+      border: none;
+      box-shadow: none;
+    }
+    .accordion-modern .accordion-button:not(.collapsed) {
+      background: #fffaf5;
+      color: #f97316;
+    }
+    .accordion-modern .accordion-button:focus {
+      box-shadow: none;
+    }
+    .accordion-modern .accordion-body {
+      padding: 1.5rem 2rem 2rem;
+      background: #ffffff;
+      border-top: 1px solid #f1f5f9;
+    }
+    .reaction-box {
+      background: #fefce8;
+      border-left: 5px solid #f97316;
+      border-radius: 20px;
+      padding: 1rem 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .usage-box {
+      background: #f0fdf4;
+      border-radius: 24px;
+      padding: 1.2rem;
+      margin-top: 1.5rem;
+    }
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px -5px rgba(0,0,0,0.15);
+    }
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+    }
+    .halogen-color {
+      background: #1e293b;
+      border-radius: 24px;
+      padding: 1rem;
+    }
+    footer {
+      background: #0f172a;
+      color: #cbd5e1;
+    }
+    @media (max-width: 768px) {
+      .hero-title { font-size: 1.6rem; }
+      .hero-lesson { padding: 2.5rem 0; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ***** Navbar (same design as previous lessons) ***** -->
+<nav class="navbar navbar-expand-lg sticky-top">
+  <div class="container-fluid px-4 px-lg-5">
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <img class="logo me-2" src="assets/images/pteclogo.png" alt="PTEC logo" onerror="this.src='https://placehold.co/50?text=PTEC'">
+      <span class="fw-bold fs-6 fs-lg-5">វិទ្យាស្ថានគរុកោសល្យរាជធានីភ្នំពេញ</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav gap-2 gap-lg-3 align-items-center">
+        <li class="nav-item"><a class="nav-link" href="index.html">ទំព័រដើម</a></li>
+        <li class="nav-item"><a class="nav-link" href="periodictable.html">តារាងខួបនៃធាតុគីមី</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            មេរៀន
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="lesson1.html">មេរៀនទី១ : លក្ខណៈរបស់តារាងខួបនៃធាតុគីមី</a></li>
+            <li><a class="dropdown-item" href="lesson2.html">មេរៀនទី២ : ក្រុមទី I (1A) - លោហៈអាល់កាឡាំង</a></li>
+            <li><a class="dropdown-item" href="lesson3.html">មេរៀនទី៣ : ក្រុម VIIA - អាឡូសែន (Halogens)</a></li>
+            <li><a class="dropdown-item" href="lesson4.html">មេរៀនទី៤ : ក្រុម VIIIA - ឧស្ម័នកម្រ</a></li>
+            <li><a class="dropdown-item" href="lesson5.html">មេរៀនទី៥ : ក្រុម VIA - លោហៈ</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="quiz.html">តេស្ត</a></li>
+        <li class="nav-item"><a class="nav-link" href="#blog">ព័ត៌មានទំនាក់ទំនង</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">អំពីយើង</a></li>
+        <li class="nav-item d-lg-block ms-2">
+          <a class="btn btn-contact rounded-pill px-4 py-2" href="#contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section Modern -->
+<section class="hero-lesson text-white">
+  <div class="container py-4">
+    <div class="row align-items-center">
+      <div class="col-lg-9 mx-auto text-center" data-aos="fade-up">
+        <span class="info-badge d-inline-block mb-3">ជំពូកទី២ · តារាងខួបនៃធាតុគីមី</span>
+        <h1 class="hero-title fw-bold mt-2">មេរៀនទី៣: ក្រុម VIIA - អាឡូសែន (Halogens)</h1>
+        <p class="lead mt-4 opacity-90">ស្វែងយល់ពីលក្ខណៈរូបវន្ត លក្ខណៈគីមី ប្រតិកម្ម និងការប្រើប្រាស់នៃធាតុអាឡូសែន</p>
+        <div class="mt-4">
+          <a href="#content-start" class="btn btn-light rounded-pill px-5 py-3 fw-semibold shadow-sm">ចាប់ផ្តើមសិក្សា <i class="bi bi-arrow-down-short"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Main Content -->
+<div class="container my-5" id="content-start">
+  
+  <!-- Two main cards preview -->
+  <div class="row g-4 mb-5" data-aos="fade-up">
+    <div class="col-md-6">
+      <div class="feature-card p-4 text-center">
+        <div class="mb-3">
+          <div class="element-badge">ក្រុម VIIA</div>
+        </div>
+        <img src="images/Halogens-Physical.png" class="img-fluid rounded-4 mb-3" style="max-height: 180px; object-fit: cover; width: 100%;" alt="Halogens Physical" onerror="this.src='https://placehold.co/400x180?text=Halogens+Physical'">
+        <h4 class="fw-bold mt-2">លក្ខណៈរូប</h4>
+        <p class="text-muted">ហ្វ្លុយអរ (F₂) លឿងស្លេក, ក្លរ (Cl₂) លឿងបៃតង, ប្រូម (Br₂) ក្រហមត្នោត, អ៊ីយ៉ូត (I₂) ពណ៌ស្វាយ</p>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="feature-card p-4 text-center">
+        <div class="mb-3">
+          <div class="element-badge">ប្រតិកម្មគីមី</div>
+        </div>
+        <img src="images/Halogen-React.jpg" class="img-fluid rounded-4 mb-3" style="max-height: 180px; object-fit: cover; width: 100%;" alt="Halogens Reactions" onerror="this.src='https://placehold.co/400x180?text=Halogens+Reactions'">
+        <h4 class="fw-bold mt-2">លក្ខណៈគីមី</h4>
+        <p class="text-muted">សកម្មខ្លាំង ប្រតិកម្មជាមួយលោហៈ និងប្រតិកម្មជំនួស</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Introduction: Halogens overview -->
+  <div class="row mb-5" data-aos="fade-up">
+    <div class="col-lg-12">
+      <div class="bg-white rounded-4 p-4 shadow-sm">
+        <h3 class="fw-bold mb-3"><i class="bi bi-flask-fill text-warning me-2"></i>សេចក្តីផ្តើម</h3>
+        <p class="fs-6">ក្រុមអាឡូសែនមានធាតុសំខាន់ៗចំនួន៤គឺ ភ្លុយអរ(F) ក្លរ(Cl) ប្រូម(Br) និង អុីយ៉ូត(I) ។ ពួកវាជាអលោហៈសកម្មខ្លាំង (ងាយចាប់អេឡិចត្រុង)។ លក្ខណៈសកម្មរបស់អលោហៈទាំងនេះថយចុះពីលើចុះក្រោមតាមក្រុម បណ្ដាលមកពីកាំអាតូមកាន់តែធំធ្វើឲ្យការទាញយកអេឡិចត្រុងកាន់តែពិបាក។</p>
+        <p class="fs-6 mt-2">ពួកវាស្ថិតក្នុងទម្រង់ជាឌីអាតូមគឺ F₂, Cl₂, Br₂, I₂។ លក្ខណៈសកម្មរបស់វា៖ F₂ > Cl₂ > Br₂ > I₂</p>
+        <div class="text-center mt-4">
+          <img src="images/Alogen.jpg" class="img-fluid rounded-4 shadow" style="max-height: 300px;" alt="Halogens in periodic table" onerror="this.src='https://placehold.co/600x250?text=Halogens+Group+VIIA'">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Accordion: Physical Properties -->
+  <div class="accordion-modern accordion" id="physAccordion">
+    <div class="accordion-item border-0 bg-transparent">
+      <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#physicalCollapse" aria-expanded="true">
+          <i class="bi bi-gem me-3 text-warning"></i> ក. លក្ខណៈរូប (Physical Properties)
+        </button>
+      </h2>
+      <div id="physicalCollapse" class="accordion-collapse collapse show" data-bs-parent="#physAccordion">
+        <div class="accordion-body">
+          <div class="text-center mb-4">
+            <img src="images/Hellogen.jpg" class="img-fluid rounded-4 shadow-sm" style="max-width: 90%;" alt="Halogens samples" onerror="this.src='https://placehold.co/700x300'">
+          </div>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <img src="images/halogens_in_flasks_large.webp" class="img-fluid rounded-4 shadow-sm w-100" alt="Halogens in flasks" onerror="this.src='https://placehold.co/400x250'">
+            </div>
+            <div class="col-md-6">
+              <img src="images/halogen_colour.jpg" class="img-fluid rounded-4 shadow-sm w-100" alt="Halogen colors" onerror="this.src='https://placehold.co/400x250'">
+            </div>
+          </div>
+          
+          <!-- Usage section -->
+          <div class="usage-box mt-4">
+            <h5 class="fw-bold text-success"><i class="bi bi-box-seam me-2"></i>ការប្រើប្រាស់អាឡូសែន</h5>
+            <img src="images/UsageofHalogen.jpg" class="img-fluid rounded-3 mt-2" alt="Uses of Halogens" onerror="this.src='https://placehold.co/600x200?text=Uses+of+Halogens'">
+            <div class="row mt-3 g-2">
+              <div class="col-md-3 col-6"><span class="badge bg-info text-dark p-2">F₂: ធ្មេញ, ទូរទឹកកក</span></div>
+              <div class="col-md-3 col-6"><span class="badge bg-success p-2">Cl₂: សម្លាប់មេរោគ, PVC</span></div>
+              <div class="col-md-3 col-6"><span class="badge bg-warning text-dark p-2">Br₂: ថ្នាំ, កសិកម្ម</span></div>
+              <div class="col-md-3 col-6"><span class="badge bg-secondary p-2">I₂: ថ្នាំសំលាប់មេរោគ</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Accordion: Chemical Properties -->
+  <div class="accordion-modern accordion mt-4" id="chemAccordion">
+    <div class="accordion-item border-0 bg-transparent">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#chemicalCollapse" aria-expanded="false">
+          <i class="bi bi-flask me-3 text-warning"></i> ខ. លក្ខណៈគីមី (Chemical Properties)
+        </button>
+      </h2>
+      <div id="chemicalCollapse" class="accordion-collapse collapse" data-bs-parent="#chemAccordion">
+        <div class="accordion-body">
+          
+          <!-- Reaction with Metals -->
+          <div class="reaction-box">
+            <h5 class="fw-bold text-dark"><i class="bi bi-cpu me-2 text-primary"></i>ក. ប្រតិកម្មជាមួយលោហៈ</h5>
+            <p class="mb-2">ក្រុមអាឡូសែនទាំងអស់មានប្រតិកម្មយ៉ាងខ្លាំងក្លាជាមួយលោហៈបង្កើតបានជា <strong class="text-danger">អំបិលអាឡូសែន</strong>។</p>
+            <div class="bg-dark text-white p-3 rounded-4 mt-2 text-center">
+              <code class="text-warning">លោហៈ + អាឡូសែន → អំបិល</code>
+            </div>
+            <p class="mt-3"><span class="text-danger fw-bold">ឧទាហរណ៍:</span> 2Na + Cl₂ → 2NaCl</p>
+            <img src="images/halogen_react1.jpg" class="img-fluid rounded-3 mt-2" style="max-width: 100%;" alt="Halogen reaction with metal" onerror="this.src='https://placehold.co/500x150'">
+          </div>
+
+          <!-- Displacement Reactions -->
+          <div class="reaction-box mt-4">
+            <h5 class="fw-bold text-dark"><i class="bi bi-arrow-left-right me-2 text-primary"></i>ខ. ប្រតិកម្មជំនួស (Displacement)</h5>
+            <p class="mb-2">អាឡូសែនដែលសកម្មខ្លាំងអាចជំនួសអាឡូសែនដែលមិនសូវសកម្មពីសូលុយស្យុងអំបិលរបស់វាបាន។</p>
+            <div class="bg-dark text-white p-3 rounded-4 mt-2 text-center">
+              <code class="text-warning">អាឡូសែនសកម្ម + អំបិលអាឡូសែនអសកម្ម → អំបិលថ្មី + អាឡូសែនអសកម្ម</code>
+            </div>
+            <p class="mt-3"><span class="text-danger fw-bold">ឧទាហរណ៍:</span> 2KI + Cl₂ → 2KCl + I₂</p>
+            <img src="images/Halogen_react2.jpg" class="img-fluid rounded-3 mt-2" style="max-width: 100%;" alt="Displacement reaction" onerror="this.src='https://placehold.co/500x120'">
+          </div>
+
+          <!-- Additional images -->
+          <div class="row mt-4 g-3  ">
+            <div class="col-md-6">
+              <img src="images/Halogen-React.jpg" class="img-fluid rounded-4 shadow-sm w-100" style="max-height: 500px; max-width: 500px; object-fit: cover;" alt="Halogen reactions" onerror="this.src='https://placehold.co/400x250'">
+            </div>
+            <div class="col-md-6">
+              <img src="images/Halogen_React.jpg" class="img-fluid rounded-4 shadow-sm w-100" style="max-height: 500px; max-width: 500px; object-fit: cover;" alt="Halogen reactions 2" onerror="this.src='https://placehold.co/400x250'">
+            </div>
+          </div>
+
+          <!-- Video Section -->
+          <h5 class="fw-bold mt-5"><i class="bi bi-play-circle-fill text-danger me-2"></i>វីដេអូបង្ហាញពីប្រតិកម្មនៃក្រុមអាឡូសែន</h5>
+          <div class="video-wrapper mt-3">
+            <iframe src="https://www.youtube.com/embed/TMwpLNZJmQo" title="Halogens Reactions" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick Facts Card -->
+  <div class="row mt-5" data-aos="fade-up">
+    <div class="col-lg-12">
+      <div class="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-4 p-4" style="background: linear-gradient(135deg, #eef2ff, #fae8ff);">
+        <h4 class="fw-bold text-dark"><i class="bi bi-lightbulb-fill text-warning me-2"></i>ចំណុចសំខាន់ៗ</h4>
+        <div class="row mt-3">
+          <div class="col-md-4">
+            <div class="d-flex align-items-center mb-2"><i class="bi bi-1-circle-fill text-primary me-2"></i><span>អាឡូសែនជាអលោហៈសកម្មបំផុតក្នុងតារាងខួប</span></div>
+          </div>
+          <div class="col-md-4">
+            <div class="d-flex align-items-center mb-2"><i class="bi bi-2-circle-fill text-primary me-2"></i><span>លក្ខណៈសកម្មថយចុះពី F₂ → I₂</span></div>
+          </div>
+          <div class="col-md-4">
+            <div class="d-flex align-items-center mb-2"><i class="bi bi-3-circle-fill text-primary me-2"></i><span>មានទម្រង់ជាម៉ូលេគុលឌីអាតូម (X₂)</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="mt-5 pt-5 pb-4">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6 text-center text-md-start">
+        <h5 class="text-white fw-semibold">វិទ្យាស្ថានគរុកោសល្យរាជធានីភ្នំពេញ</h5>
+        <p class="small opacity-75">គម្រោងតារាងខួបគីមី - ក្រុមអាឡូសែន (VIIA)</p>
+      </div>
+      <div class="col-md-6 text-center text-md-end">
+        <div class="social-links">
+          <a href="#" class="text-white me-3 fs-5"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="text-white me-3 fs-5"><i class="bi bi-telegram"></i></a>
+          <a href="#" class="text-white fs-5"><i class="bi bi-envelope"></i></a>
+        </div>
+        <p class="mt-3 small opacity-50">© 2025 PTEC - រក្សាសិទ្ធិគ្រប់យ៉ាង</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 800, once: true, offset: 20 });
+  // Image fallback handling
+  document.querySelectorAll('img').forEach(img => {
+    img.onerror = function() { this.style.opacity = '0.5'; };
+  });
+</script>
+</body>
+</html>

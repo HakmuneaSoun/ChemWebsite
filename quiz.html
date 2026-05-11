@@ -1,0 +1,541 @@
+Here is the redesigned HTML document for your Quiz page, using orange and yellow colors while keeping all JavaScript functionality intact.
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>កម្រងសំណួរ - តេស្តគីមីវិទ្យា</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link href="https://fonts.googleapis.com/css2?family=Hanuman:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/quiz.css" />
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    
+    <style>
+        /* Additional custom styling with Orange & Yellow theme */
+        body {
+            background: linear-gradient(135deg, #f59e0b 0%, #ea580c 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            font-family: 'Hanuman', 'Segoe UI', sans-serif;
+        }
+        
+        /* Popup Container Overlay */
+        .popup-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 196, 32, 0.6);
+            backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .popup-container.active {
+            visibility: visible;
+            opacity: 1;
+        }
+        
+        /* Modern Quiz Box - Orange/Yellow Theme */
+        .quiz-box {
+            background: white;
+            border-radius: 32px;
+            width: 90%;
+            max-width: 700px;
+            padding: 2rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 0.4s ease;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Config Popup Styles - Orange Theme */
+        .config-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #f59e0b, #ea580c);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .config-option {
+            margin-bottom: 1.5rem;
+        }
+        
+        .option-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 0.75rem;
+        }
+        
+        .category-options, .question-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+        
+        .category-option, .question-option {
+            padding: 0.6rem 1.2rem;
+            border: 2px solid #e5e7eb;
+            background: white;
+            border-radius: 40px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: #4b5563;
+            font-family: 'Hanuman', sans-serif;
+        }
+        
+        .category-option:hover, .question-option:hover {
+            border-color: #f59e0b;
+            background: #fffbeb;
+        }
+        
+        .category-option.active, .question-option.active {
+            background: linear-gradient(135deg, #f59e0b, #ea580c);
+            border-color: transparent;
+            color: white;
+            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
+        }
+        
+        .start-quiz-btn {
+            width: 100%;
+            padding: 0.9rem;
+            background: linear-gradient(135deg, #f59e0b, #ea580c);
+            border: none;
+            border-radius: 50px;
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+        
+        .start-quiz-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.5);
+        }
+        
+        /* Quiz Header - Orange Theme */
+        .quiz-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #fef3c7;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .quiz-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #1e293b;
+        }
+        
+        .quiz-timer {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #fef3c7;
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            color: #ea580c;
+            font-weight: 600;
+        }
+        
+        .quiz-timer span {
+            font-size: 1.3rem;
+        }
+        
+        /* Question Section */
+        .quiz-content {
+            margin: 2rem 0;
+        }
+        
+        .question-text {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 1.5rem;
+            line-height: 1.4;
+        }
+        
+        .answer-options {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+        
+        .answer-options li {
+            padding: 1rem 1.2rem;
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 16px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-weight: 500;
+            color: #334155;
+        }
+        
+        .answer-options li:hover {
+            border-color: #f59e0b;
+            background: #fffbeb;
+            transform: translateX(5px);
+        }
+        
+        .answer-options li.correct {
+            background: #fef3c7;
+            border-color: #f59e0b;
+            color: #92400e;
+        }
+        
+        .answer-options li.wrong {
+            background: #fee2e2;
+            border-color: #ef4444;
+            color: #991b1b;
+        }
+        
+        .answer-options li.disabled {
+            pointer-events: none;
+            opacity: 0.8;
+        }
+        
+        /* Footer */
+        .quiz-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 2px solid #fef3c7;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .question-status {
+            font-size: 0.9rem;
+            color: #6b7280;
+            font-weight: 500;
+        }
+        
+        .quit-question-btn, .next-question-btn {
+            padding: 0.7rem 1.5rem;
+            border-radius: 40px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: none;
+        }
+        
+        .quit-question-btn {
+            background: #fee2e2;
+            color: #dc2626;
+        }
+        
+        .quit-question-btn:hover {
+            background: #fecaca;
+            transform: scale(0.98);
+        }
+        
+        .next-question-btn {
+            background: linear-gradient(135deg, #f59e0b, #ea580c);
+            color: white;
+        }
+        
+        .next-question-btn:hover {
+            transform: translateX(3px);
+            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
+        }
+        
+        /* Result Popup - Orange Theme */
+        .result-container {
+            text-align: center;
+        }
+        
+        .result-img {
+            width: 120px;
+            margin-bottom: 1rem;
+        }
+        
+        .result-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 1rem;
+        }
+        
+        .result-message {
+            color: #4b5563;
+            margin-bottom: 1rem;
+        }
+        
+        .score-answers-count {
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: #ea580c;
+        }
+        
+        .try-again-btn {
+            margin-top: 1rem;
+            padding: 0.8rem 2rem;
+            background: linear-gradient(135deg, #f59e0b, #ea580c);
+            border: none;
+            border-radius: 40px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .try-again-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(245, 158, 11, 0.4);
+        }
+        
+        /* Quit button styling - Orange/Yellow */
+        .btn-quit-home {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            border: none;
+            transition: all 0.2s;
+        }
+        
+        .btn-quit-home:hover {
+            transform: scale(0.98);
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+        }
+        
+        /* Responsive */
+        @media (max-width: 600px) {
+            .quiz-box {
+                padding: 1.5rem;
+            }
+            .question-text {
+                font-size: 1.1rem;
+            }
+            .quiz-footer {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Config Popup (Category & Question Selection) -->
+    <div class="config-popup popup-container active" id="configPopup">
+        <div class="config-container quiz-box">
+            <div class="d-flex justify-content-end mb-3">
+                <button class="btn btn-quit-home d-flex align-items-center gap-2 px-3 py-2 rounded-pill shadow-sm text-white" id="quitBtn1">
+                    <span class="material-symbols-rounded">close</span>
+                    ចាកចេញ
+                </button>
+            </div>
+
+            <h2 class="config-title">តេស្តវាយតម្លៃសមត្ថភាព</h2>
+
+            <div class="config-option">
+                <h4 class="option-title">សូមធ្វើការជ្រើសរើសប្រភេទនៃមេរៀន</h4>
+                <div class="category-options">
+                    <button class="category-option active">លក្ខណៈរបស់តារាងខួបនៃធាតគីមី</button>
+                    <button class="category-option">ក្រុមIA:លោហៈអាល់កាឡាំង</button>
+                    <button class="category-option">ក្រុមVIIA:អាឡូសែន</button>
+                    <button class="category-option">ក្រុមVIIIA:ឧស្ម័នកម្រ</button>
+                    <button class="category-option">ក្រុមលោហៈឆ្លង</button>
+                </div>
+            </div>
+
+            <div class="config-option">
+                <h4 class="option-title">ចំនួនសំណួរ</h4>
+                <div class="question-options">
+                    <button class="question-option">5</button>
+                    <button class="question-option active">10</button>
+                    <button class="question-option">15</button>
+                    <button class="question-option">20</button>
+                    <button class="question-option">25</button>
+                </div>
+            </div>
+
+            <button class="start-quiz-btn" id="startQuizBtn">ចាប់ផ្តើម</button>
+        </div>
+    </div>
+
+    <!-- Quiz Popup (Actual Questions) -->
+    <div class="quiz-popup popup-container" id="quizPopup">
+        <div class="quiz-container quiz-box">
+            <header class="quiz-header">
+                <h2 class="quiz-title">កម្មវិធីតេស្តវាយតម្លៃ</h2>
+                <div class="quiz-timer">
+                    <span class="material-symbols-rounded">timer</span>
+                    <p class="timer-duration mb-0"></p>
+                </div>
+            </header>
+
+            <div class="quiz-content">
+                <h1 class="question-text"></h1>
+                <ul class="answer-options"></ul>
+            </div>
+
+            <div class="quiz-footer">
+                <p class="question-status"></p>
+                <div>
+                    <button class="quit-question-btn" id="quitBtn2">
+                        ចាកចេញ
+                        <span class="material-symbols-rounded">close</span>
+                    </button>
+                    <button class="next-question-btn" id="nextBtn">
+                        បន្ទាប់
+                        <span class="material-symbols-rounded">arrow_right_alt</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quiz Result Popup -->
+    <div class="result-popup popup-container" id="resultPopup">
+        <div class="result-container quiz-box">
+            <img src="images/quiz-over.png" class="result-img" alt="Quiz Complete" />
+            <h2 class="result-title">តេស្តត្រូវបានបញ្ចប់!</h2>
+            <p class="result-message"></p>
+            <p><b>ពិន្ទុសរុប: </b><span class="score-answers-count"></span></p>
+            <button class="try-again-btn" id="tryAgainBtn">សូមព្យាយាមម្តងទៀត</button>
+        </div>
+    </div>
+
+    <!-- Scripts - Keeping original references intact -->
+    <script src="js/question.js"></script>
+    <script src="js/quiz.js"></script>
+
+    <!-- Redirect Script - Enhanced with proper popup management -->
+    <script>
+        // DOM elements
+        const configPopupEl = document.querySelector('.config-popup');
+        const quizPopupEl = document.querySelector('.quiz-popup');
+        const resultPopupEl = document.querySelector('.result-popup');
+        
+        // Send user back to home page
+        function goHome() {
+            window.location.href = "/index.html";
+        }
+        
+        // Close popups helper
+        function closeAllPopups() {
+            if(configPopupEl) configPopupEl.classList.remove('active');
+            if(quizPopupEl) quizPopupEl.classList.remove('active');
+            if(resultPopupEl) resultPopupEl.classList.remove('active');
+        }
+        
+        // Quit button 1 - from config popup
+        const quitBtn1 = document.getElementById("quitBtn1");
+        if(quitBtn1) {
+            quitBtn1.onclick = function() {
+                goHome();
+            };
+        }
+        
+        // Quit button 2 - from quiz popup
+        const quitBtn2 = document.getElementById("quitBtn2");
+        if(quitBtn2) {
+            quitBtn2.onclick = function() {
+                if(confirm("តើអ្នកពិតជាចង់ចាកចេញពីការប្រឡងមែនទេ?")) {
+                    goHome();
+                }
+            };
+        }
+        
+        // Try again button - reset to config
+        const tryAgainBtn = document.getElementById("tryAgainBtn");
+        if(tryAgainBtn) {
+            tryAgainBtn.onclick = function() {
+                if(resultPopupEl) resultPopupEl.classList.remove('active');
+                if(configPopupEl) configPopupEl.classList.add('active');
+                // Reset quiz state if quiz.js provides a reset function
+                if(typeof window.resetQuiz === 'function') {
+                    window.resetQuiz();
+                }
+            };
+        }
+        
+        // Category and Question selection styling (keep original behavior)
+        const categoryOptions = document.querySelectorAll('.category-option');
+        categoryOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                categoryOptions.forEach(opt => opt.classList.remove('active'));
+                option.classList.add('active');
+            });
+        });
+        
+        const questionOptions = document.querySelectorAll('.question-option');
+        questionOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                questionOptions.forEach(opt => opt.classList.remove('active'));
+                option.classList.add('active');
+            });
+        });
+        
+        // Start quiz button - ensure it triggers the existing quiz.js start logic
+        const startQuizBtn = document.getElementById("startQuizBtn");
+        if(startQuizBtn) {
+            startQuizBtn.onclick = function() {
+                // Store selected values for quiz.js
+                const selectedCategory = document.querySelector('.category-option.active')?.innerText || '';
+                const selectedCount = parseInt(document.querySelector('.question-option.active')?.innerText || '10');
+                
+                localStorage.setItem('quizCategory', selectedCategory);
+                localStorage.setItem('quizCount', selectedCount);
+                
+                // If quiz.js has a startQuiz function, call it
+                if(typeof window.startQuiz === 'function') {
+                    window.startQuiz();
+                } else {
+                    // Fallback: manually show quiz popup (quiz.js will populate)
+                    if(configPopupEl) configPopupEl.classList.remove('active');
+                    if(quizPopupEl) quizPopupEl.classList.add('active');
+                }
+            };
+        }
+        
+        // Handle next button click from quiz.js if needed
+        const nextBtn = document.getElementById("nextBtn");
+        if(nextBtn) {
+            nextBtn.onclick = function() {
+                // This will be handled by quiz.js, but ensure it exists
+                if(typeof window.nextQuestion === 'function') {
+                    window.nextQuestion();
+                }
+            };
+        }
+        
+        console.log("Quiz page ready - Orange/Yellow theme active - JavaScript functionality preserved");
+    </script>
+</body>
+</html>
+```
